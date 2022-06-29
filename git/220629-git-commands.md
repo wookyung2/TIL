@@ -1,9 +1,9 @@
-#오늘 배운 내용
+# 오늘 배운 내용
 
 -Shell Command / Vim Command
 -Git Command ( add, commit, push)
 
-#Shell Command
+## Shell Command
 - 디렉토리 이동 : cd 디렉토리명
 - 디렉토리를 만들기: mkdir 디렉토리명
 - 파일 만들기: touch 파일명
@@ -17,7 +17,7 @@
         rm -rf 폴더명: 폴더와 디렉토리 모두 강제로 지워라
 - 텍스트 라인 취합해 shell에 출력: cat 파일명
 
-#Vim Command
+## Vim Command
 
 ex) vi hello.md
 
@@ -27,13 +27,13 @@ ex) vi hello.md
 - 저장: :+wq(wirte and quit) 
         저장은 무조건 normal 모드에서만 가능하다
 
-#git Command
+## git Command
 - git clone 
 - git add
 - git commit
 - git push origin main
 
-#Commit 할 때 기억해야 할 것
+## Commit 할 때 기억해야 할 것
 - Commit은 동작 가능한 최소단위로 자주 할 것
 - 제목과 내용은 한줄 띄워 분리할 것
 - 제목은 50자 이내, 내용은 문장형으로 작성하여 추가 설명할 것
@@ -41,7 +41,7 @@ ex) vi hello.md
 - Open Source Contribution시 영어가 강제되지만 그렇지 않을 경우 팀 내 사용 언어 따라 쓸 것
 - 내용은 이 Commit의 구성과 의도를 충분히 작성할 것
 
-#Conventional Commits
+## Conventional Commits
 
 1. commit의 제목은 commit을 설명하는 하나의 구 나 절로 완성
 2. importanceofcapitalize Improtance of Capitalize
@@ -53,3 +53,12 @@ ex) vi hello.md
     - conf : 환경설정 관련
     - build : 빌드 관련
     - ci : Continuous Integration 관련
+
+## git으로 작업한 내용(ex.README.md) push 하기
+```shell
+$ vi README.md
+$ git status
+$ git add README.md
+$ git commit
+$ git push origin main
+```
