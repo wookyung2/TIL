@@ -1,7 +1,7 @@
 # 오늘 배운 내용
 
--Shell Command / Vim Command
--Git Command ( add, commit, push)
+- Shell Command / Vim Command
+- Git Command ( add, commit, push)
 
 ## Shell Command
 - 디렉토리 이동 : cd 디렉토리명
@@ -12,9 +12,9 @@
 - 복사: cp 파일명 위치/새로운 파일명
 - 이름 변경: rename 대상파일명 위치/새로운파일명
 - 삭제: rm
-        rm *.css : css의 모든 파일을 지워라
-        rm nav.* : nav의 이름을 가진 모든 파일을 지워라
-        rm -rf 폴더명: 폴더와 디렉토리 모두 강제로 지워라
+      - rm *.css : css의 모든 파일을 지워라
+      - rm nav.* : nav의 이름을 가진 모든 파일을 지워라
+      - rm -rf 폴더명: 폴더와 디렉토리 모두 강제로 지워라
 - 텍스트 라인 취합해 shell에 출력: cat 파일명
 
 ## Vim Command
@@ -62,3 +62,7 @@ $ git add README.md
 $ git commit
 $ git push origin main
 ```
+
+## 느낀점
+
+ 능동적으로 코딩하자
