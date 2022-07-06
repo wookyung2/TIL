@@ -1,0 +1,178 @@
+.full-container {
+  width: 100%;
+  height: 100vh;
+}
+/* HEADER */
+.title-wrapper {
+  display: flex;
+  height: 8vh;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 5% 7%;
+}
+
+.title-wrapper img {
+  display: block;
+}
+
+.title-logo {
+  width: 38%;
+}
+
+.title-camera {
+  width: 8%;
+}
+
+.title-dm {
+  width: 8%;
+}
+
+.content-wrapper {
+  height: 10vh;
+  display: flex;
+  background-color: rgb(241, 239, 239);
+  align-items: center;
+  justify-content: space-around;
+  border-top: 0.3vh solid rgb(221, 218, 218);
+  border-bottom: 0.3vh solid rgb(221, 218, 218);
+}
+
+.content-item {
+  text-align: center;
+}
+
+.content-story {
+  width: 50%;
+  border-radius: 50%;
+}
+
+.user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1vh 5vw;
+  position: relative;
+}
+
+.user .user-img {
+  width: 8%;
+  border-radius: 50%;
+}
+
+.user .user-id {
+  display: flex;
+  align-items: center;
+}
+
+.user .user-more {
+  justify-self: right;
+  width: 5%;
+}
+
+.post-container {
+  width: 100%;
+  height: 50vh;
+}
+
+.post .post__img {
+  width: 100%;
+  height: 100%;
+}
+
+.content-item h4 {
+  margin-top: 3%;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.user h4 {
+  font-weight: 900;
+  font-size: 11px;
+  margin-left: 2%;
+}
+
+.insta-function {
+  display: flex;
+  align-items: center;
+  margin: 1vh 5vw;
+  postion: relative;
+}
+
+.insta-function img {
+  width: 65%;
+}
+
+.insta-function .favorite-img {
+  width: 5%;
+  position: absolute;
+  right: 20px;
+}
+
+.info-container {
+  height: 10vh;
+  margin-left: 22px;
+}
+
+.info-name {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.info-name h4 {
+  margin-left: 5px;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.info .info-name-img {
+  border-radius: 50%;
+  width: 5%;
+}
+
+.user-comment {
+  display: flex;
+
+  margin-top: 7px;
+  align-items: center;
+  text-align: center;
+}
+
+.user-comment h5 {
+  font-weight: bolder;
+  font-size: 12px;
+}
+
+.user-comment h4 {
+  font-size: 11px;
+  margin-left: 5px;
+}
+
+.hour {
+  color: rgb(179, 175, 175);
+  font-size: 10px;
+  margin-top: 12px;
+}
+
+.nav-container {
+  height: 10vh;
+}
+
+.nav-container .footer-img {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgb(241, 239, 239);
+  border-top: 0.3vh solid rgb(221, 218, 218);
+}
+
+.nav-container .footer-img .img-size {
+  width: 7%;
+}
+
