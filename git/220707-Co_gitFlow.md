@@ -64,13 +64,16 @@
 4. git bash   
 
  
-   [git reop 생성]
+   __[git reop 생성]__  
+
 
 
    dev에 git clone 주소 → repo 생성 확인 → repo로 들어가서 일 시작
 
 
-   [본격적으로 일 시작 단계  : vi~ commit 반복]
+   __[본격적으로 일 시작 단계  : vi~ commit 반복]__
+
+
 
 
    git flow init → git flow feature start 기능이름 
@@ -81,8 +84,7 @@
 
 
 
-   [코드 작성 마무리 후 pull request 하기]
-
+   __[코드 작성 마무리 후 pull request 하기]__
 
 
    git flow feature finish 기능이름→ merge commit 뜨면 저장하고 나가기
@@ -90,21 +92,19 @@
    → git push -u origin develop ( 내 repo에는 develop 없기때문에 branch를 생성해줘야 한다)
 
 
+   __[github에서 open]__
 
-   [github에서 open]
-
-
-
+   
    `Pull requests` → head 본인레포 compare: `develop`  ⇒ base: 팀레포 `develop` → 제목(추후 release note가 됨) , 내용: clse #1 (내 issue번호) resolve → Ceate pull request
 
 
-   [코드리뷰 확인 후 추가 작업하기]
+   __[코드리뷰 확인 후 추가 작업하기]__
 
 
-   수정 작업 완료 → git add → git commit (추가요청이기 때문에 develop에서 바로 써도 됨) → git push origin develop 
+   수정 작업 완료 → git add → git commit (추가요청이기 때문에 develop에서 바로 써도 됨) → git push origin develop
 
 
-   [두번째 팀원부터는 `꼭 pull 작업을 해 기존 merge된 최신사항 당겨받아 사용]`
+   __[두번째 팀원부터는 `꼭 pull 작업을 해 기존 merge된 최신사항 당겨받아 사용]`__
 
 
    git remote (확인) → git remote -v (확인) → 팀의 repo주소 등록:
