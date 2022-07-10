@@ -1,15 +1,21 @@
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1em;
+}
+
 .full-container {
-  width: 100%;
   height: 100vh;
 }
 /* HEADER */
 .title-wrapper {
   display: flex;
-  height: 8vh;
+  height: 5rem;
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
-  padding: 5% 7%;
+  padding: 2rem 2.4rem;
 }
 
 .title-wrapper img {
@@ -17,25 +23,32 @@
 }
 
 .title-logo {
-  width: 38%;
+  width: 11rem;
 }
 
 .title-camera {
-  width: 8%;
+  width: 2.4rem;
 }
 
 .title-dm {
-  width: 8%;
+  width: 2.4rem;
+}
+
+.content-layout {
+  max-width: 860px;
+  margin: 0 auto;
+  padding-bottom: 7rem;
 }
 
 .content-wrapper {
-  height: 10vh;
+  height: 6.6rem;
   display: flex;
   background-color: rgb(241, 239, 239);
   align-items: center;
-  justify-content: space-around;
-  border-top: 0.3vh solid rgb(221, 218, 218);
-  border-bottom: 0.3vh solid rgb(221, 218, 218);
+  justify-content: space-between;
+  border-top: 0.2rem solid rgb(221, 218, 218);
+  border-bottom: 0.2rem solid rgb(221, 218, 218);
+  padding: 0 2.4rem;
 }
 
 .content-item {
@@ -43,21 +56,27 @@
 }
 
 .content-story {
-  width: 50%;
+  width: 4.2rem;
   border-radius: 50%;
+  border: 2px solid transparent;
+  background-image: linear-gradient(#f6f6f6, #f6f6f6),
+    linear-gradient(to right, #ff7700, #ff3636aa, #ff00c3);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
 }
 
 .user {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 1vh 5vw;
+  padding: 0.6rem 2.4rem;
   position: relative;
 }
 
 .user .user-img {
-  width: 8%;
+  width: 3rem;
   border-radius: 50%;
+  margin-right: 0.4rem;
 }
 
 .user .user-id {
@@ -65,114 +84,115 @@
   align-items: center;
 }
 
-.user .user-more {
-  justify-self: right;
-  width: 5%;
+.user h4 {
+  font-weight: 900;
+  font-size: 0.6rem;
 }
 
-.post-container {
-  width: 100%;
-  height: 50vh;
+.user .user-more {
+  justify-self: right;
+  width: 1.6rem;
 }
 
 .post .post__img {
   width: 100%;
-  height: 100%;
+  max-width: 100%;
 }
 
 .content-item h4 {
-  margin-top: 3%;
-  font-size: 11px;
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
   font-weight: bold;
-}
-
-.user h4 {
-  font-weight: 900;
-  font-size: 11px;
-  margin-left: 2%;
 }
 
 .insta-function {
   display: flex;
   align-items: center;
-  margin: 1vh 5vw;
-  postion: relative;
+  position: relative;
+  margin: 1rem 2.4rem;
 }
 
 .insta-function img {
-  width: 65%;
+  display: block;
+  width: 2rem;
+  margin-right: 1rem;
 }
 
 .insta-function .favorite-img {
-  width: 5%;
+  width: 1.7rem;
   position: absolute;
-  right: 20px;
+  right: 0;
+  margin-right: 0;
 }
 
 .info-container {
-  height: 10vh;
-  margin-left: 22px;
+  min-height: 5rem;
+  margin-left: 2.4rem;
 }
 
 .info-name {
   display: flex;
   align-items: center;
-  margin-top: 5px;
+  margin-top: 0.5rem;
 }
 
 .info-name h4 {
-  margin-left: 5px;
-  font-size: 13px;
+  margin-left: 0.5rem;
+  font-size: 1.3rem;
   font-weight: 900;
 }
 
 .info .info-name-img {
   border-radius: 50%;
-  width: 5%;
+  width: 2rem;
 }
 
 .user-comment {
   display: flex;
 
-  margin-top: 7px;
+  margin-top: 0.7rem;
   align-items: center;
   text-align: center;
 }
 
 .user-comment h5 {
   font-weight: bolder;
-  font-size: 12px;
+  font-size: 1.2rem;
 }
 
 .user-comment h4 {
-  font-size: 11px;
-  margin-left: 5px;
+  font-size: 1.1rem;
+  margin-left: 0.5rem;
 }
 
 .hour {
   color: rgb(179, 175, 175);
-  font-size: 10px;
-  margin-top: 12px;
+  margin-top: 1.2rem;
 }
+/* 
+.nav-container {
+  height: 5rem;
+} */
 
 .nav-container {
-  height: 10vh;
-}
-
-.nav-container .footer-img {
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 8vh;
   display: flex;
   align-items: center;
   justify-content: space-around;
   background-color: rgb(241, 239, 239);
   border-top: 0.3vh solid rgb(221, 218, 218);
+  padding: 1.2rem 0;
 }
 
-.nav-container .footer-img .img-size {
-  width: 7%;
+.nav-container .img-size {
+  width: 2.4rem;
 }
 
+@media (min-width: 560px) {
+  .header img {
+    display: none;
+  }
+}
