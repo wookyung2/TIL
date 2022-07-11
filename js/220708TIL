@@ -1,0 +1,471 @@
+ECMA스크립트란?
+
+[Ecma International](https://ko.wikipedia.org/wiki/Ecma_%EC%9D%B8%ED%84%B0%EB%82%B4%EC%85%94%EB%84%90)이 **ECMA-262** 기술 규격에 따라 정의하고 있는 표준화된
+
+ [스크립트 프로그래밍 언어](https://ko.wikipedia.org/wiki/%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D_%EC%96%B8%EC%96%B4).
+
+자바스크립트를 표준화하기 위해 만들어진 프로그래밍 언어.
+
+ js 시작
+
+ npm init -y ⇒ npm install parcel-bundler -D 
+
+⇒ package.json 파일에서 test 삭제 
+
+⇒ "dev": "parcel index.html",
+"build": "parcel build index.html" 추가
+
+⇒ index.html 파일 생성 및 head에 js파일 연결 
+
+⇒ 터미널에서 npm run dev 입력 ⇒ 실행 페이지 연결
+
+🌈tip: 터미널에서 휴지통 아이콘 누르면 켜놓은 서버가 종료되어 다시  npm run dev 실행해야하므로 맨 오른쪽 `x 아이콘 눌러서 닫기 or 드래그해서 밑으로 숨기자`
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/10348f0c-7f85-4ee1-a878-54ce17fc8706/Untitled.png)
+
+```jsx
+console.log(’Hello World!’);
+```
+
+console이라는 `객체`에서 log라는 `method`를 Hello World! 라는 문자데이터 `인수`와 함께 `실행`하게됨
+
+🙅한 줄에 여러 명령을 작성하지 말자 (가독성 떨어짐)
+
+```jsx
+console.log("hello world!");console.log("123"); // 나쁜 예
+
+console.log("hello world!");
+console.log("123");
+
+// 좋은 예 
+```
+
+### typeof
+
+```jsx
+console.log(typeof "hello world!"); // string
+console.log(typeof 123); // number
+console.log(typeof true); // boolean
+console.log(typeof undefined); //undefined
+console.log(typeof null); //object
+console.log(typeof {}); //object
+console.log(typeof []); //object 
+```
+
+객체데이터, 배열데이터는 위와 같이 type이 정확하게 안나옴 
+
+### export & import
+
+```jsx
+export default function getType(data) {
+  return Object.prototype.toString.call(data).slice(8, -1);
+} // 함수의 js파일을 만들어 공통으로 사용할 수 있음
+```
+
+```jsx
+import getType from "./getType"; 
+```
+
+`import` 사용하여 내가 사용하고싶은 getType 함수를 외부의 getType.js 폴더에서 불러온다. 이 때, 파일 확장자명(.js)는 생략이 가능한다.
+
+### 연산자
+
+### 산술 연산자 (arithmetic operator)
+
+```jsx
+console.log(1 + 2); //3
+console.log(5 - 7); //-2
+console.log(3 * 4); //12
+console.log(10 / 2); //5
+console.log(10 % 5); //0 나머지 연산자
+```
+
+### 할당 연산자 (assignment operator)
+
+```jsx
+let a = 2; // a라는 변수에 숫자 데이터 2를 할당한다.
+a += 1; // a = a + 1 , 빼기,곱하기, 나누기,나머지 연산자 적용가능
+
+console.log(a); //3
+```
+
+### 비교 연산자 (comparison operator)
+
+일치 연산자 `===`
+
+```jsx
+const a = 1;
+const b = 1;
+
+console.log(a === b); // true 
+
+const a = 1;
+const b = 3;
+
+console.log(a === b); // false
+```
+
+```jsx
+ function isEqual(x, y) {
+  return x === y;
+}
+
+console.log(isEqual(1, 1)); // true
+console.log(isEqual(1, '1')); // false
+```
+
+불일치 연산자 `!==`
+
+```jsx
+const a = 1;
+const b = 1;
+
+console.log(a !== b); // false
+```
+
+```jsx
+const a = 1;
+const b = 3;
+
+console.log(a !== b); // true
+```
+
+### 논리 연산자(logical operator)
+
+```jsx
+const a = 1 === 1;
+const b = "AB" === "AB";
+const c = true;
+
+console.log(a); // true
+console.log(b); // true
+console.log(c); // true
+console.log(a && b && c); // true
+
+console.log("&&: ", a && b && c); // &&, true
+console.log("||: ", a || b); // ||, true
+console.log("!: ", a); // !, true
+```
+
+`&&` : and 연산자 
+
+모든 값이 true일때, true가 출력됨
+
+`||` : or 연산자
+
+하나만 true여도 true가 출력됨
+
+`!` : 부정 연산자
+
+반대의 값이 나타남
+
+### 삼항 연산자 (ternary operator)
+
+```jsx
+const a = 1 < 2;
+
+if (a) {
+  console.log("참");
+} else {
+  console.log("거짓");
+} // 참
+
+console.log(a ? "참" : "거짓"); //참
+// ? 앞의 값이 true면 : 앞의 값을 출력, false이면 : 뒤에 값을 출력
+```
+
+### 조건문
+
+### If Else (If statement)
+
+```jsx
+export default function random() {
+  return Math.floor(Math.random() * 10);
+} // 랜덤 숫자 * 10에 소숫점 이하는 다 버린 값을 불러온다
+
+import random from "./getRandom";
+
+//조건문 
+
+const a = random();
+
+if (a == 0) {
+  console.log("a is 0");
+} else {
+  console.log("rest...");
+}
+```
+
+```jsx
+export default function random() {
+  return Math.floor(Math.random() * 10);
+} // 랜덤 숫자 * 10에 소숫점 이하는 다 버린 값을 불러온다
+
+import random from "./getRandom";
+
+//조건문 
+
+const a = random();
+
+if (a == 0) {
+  console.log("a is 0");
+} else if (a == 2) {
+  console.log("a is 2");
+} else {
+  console.log("rest...");
+}
+```
+
+### Switch (Switch statement)
+
+```jsx
+export default function random() {
+  return Math.floor(Math.random() * 10);
+}
+
+import random from "./getRandom";
+
+const a = random();
+
+switch (a) {
+  case 0:
+    console.log("a is 0");
+    break;
+  case 2:
+    console.log("a is 2");
+    break;
+  default:
+}
+```
+
+- 케이스마다 `break` 넣어 마무리 해줘야함
+
+-`default` 는 if else구문의 else부분과 같아 `break` 넣지 않아도 된다.
+
+-조건을 여러 분기로 나눌때는 `if` 구문 사용
+
+ 어떠한 변수가 특정한 값으로 떨어질 때는 `switch` 사용
+
+### 반복문
+
+### For (for statement)
+
+```jsx
+<body>
+    <h1>hello world!</h1>
+    <ul></ul>
+  </body>
+
+//for (시작조건; 종료조건; 변화조건){}
+
+const ulEl = document.querySelector("ul");
+
+console.log(ulEl);
+
+for (let i = 0; i < 3; i += 1) {
+  const li = document.createElement("li");   //li태그를 실제로 만들어 변수 li에 넣을거야
+  li.textContent = `list-${i + 1}`;   // li내용으로는 list-값을 출력할거야
+	if ( (i+1) % 2 === 0){ 
+		li.addEventListener('click',function() {
+			console.log(li.textContent); 
+})
+}  // i+1이 짝수일때 li태그를 클릭하면 li.textContent의 값이 나오게 할거야	
+  ulEl.appendChild(li);   // li태그를 ul태그 뒤의 자식요소로 저장할거야 
+}
+```
+
+변화조건엔 ; 붙지 않음!!
+
+### 유효범위
+
+-변수 선언 시, var를 사용 권장하지 않는 이유는 의도하지 않은 범위에서 사용될 수 있기때문에 개발자가 의도하지 않은 메모리 누수로 발전할 수 있어 let과 const를 이용한다.
+
+-`let`과 `const`는 블록 레벨의 유효범위를 가진다!
+
+- 블록이란?
+    
+    변수가 선언되어 있는 중괄호 내의 범위
+    
+
+-`var` 는 함수범위 안에서 유효범위를 가진다!
+
+ 
+
+```jsx
+function scope() {
+  if (true) {
+    const a = 123;
+  }
+  console.log(a);
+}
+scope(); // 콘솔출력 안됨
+```
+
+a는 범위내에서만 동작하고 그 밖에서는 동작하지 않음! 
+
+```jsx
+function scope() {
+  if (true) {
+		console.log(a);   
+		const a = 123;
+  }
+}
+scope(); // undefined
+```
+
+a가 유효범위 안에 있지만 할당되는 코드보다 출력코드가 먼저 있기때문에 `undefined`가 출력됨
+
+### 형 변환
+
+형 변환 (Type conversion)
+
+```jsx
+const a = 1;
+const b = "1";
+
+console.log(a == b); // true
+```
+
+`==` : 동등 연산자, 서로 다른 값이 `같다`라는 결과가 나오게 함
+
+```jsx
+if (true) {
+  console.log(123);
+} // 123
+
+if ('false') {
+  console.log(123);
+} // 123
+```
+
+`Truthy` (참 같은 값)
+
+: true, {}, ,[], 1, 2, ‘false’, -12, ‘3.14’ …
+
+`Falsy` (거짓 같은 값)
+
+: false, ‘ ’, null, undefined, 0, -0, NaN 
+
+falsy값을 외우자! 나머지는 다 Truthy값이니까! 
+
+### 화살표 함수
+
+() ⇒ {} vs function () {}
+
+```jsx
+ const double = function (x) {
+  return x * 2;
+};
+console.log("double: ", double(7)); //double: 14
+
+//화살표 함수
+
+const doubleArrow = (x) => {
+  return x * 2;
+};
+console.log("doubleArrow: ", doubleArrow(7)); // doubleArrow: 14
+
+const doubleArrow = x => x * 2;
+};
+console.log("doubleArrow: ", doubleArrow(7)); // doubleArrow: 14
+```
+
+기본적인 로직을 `축약형`으로 줄여나갈 수 있음
+
+`소괄호, 중괄호,  return`을 생략할 수 있음
+
+객체데이터는 중괄호 부분을 소괄호로 감싸야 축약형으로 출력이됨
+
+### 즉시실행함수 IIFE
+
+Immediately-Invoked Function Expression
+
+```jsx
+const a = 7;
+
+function double() {
+  console.log(a * 2);
+}
+double(); // 14
+
+//즉시실행함수
+
+(function () {
+  console.log(a * 2);
+})(); //14
+```
+
+// 호이스팅
+
+Hoisting
+
+함수 선언부가 유효범위 최상단으로 끌어올려지는 현상
+
+```jsx
+const a = 7;
+
+double();
+
+const double = function () {
+  console.log(a * 2);
+} // error
+```
+
+```jsx
+const a = 7;
+
+double();
+
+function double() {
+  console.log(a * 2);
+} // 14 , 정상 코드
+```
+
+함수선언을 밑에 해도 위에서 호출이 가능함
+
+// 타이머함수
+시간단위는 ms
+
+1s = 1000ms
+
+`setTimeout(함수, 시간)` : 일정 시간 후 함수 실행
+
+```jsx
+setTimeout(()=> {
+  console.log("Heropy!");
+}, 3000);
+```
+
+`setInterval(함수, 시간)` : 시간 간격마다 함수 실행
+
+```jsx
+const timer = setInterval(() => {
+  console.log("Heropy!");
+}, 3000);
+```
+
+`clearTimeout()` : 설정된 Timeout 함수를 종료
+
+```jsx
+const timer = setTimeout(()=> {
+  console.log("Heropy!");
+}, 3000);
+
+const h1El = document.querySelector('h1')
+h1El.addEventListener('click',()=>{
+  clearTimeout(timer)
+})
+```
+
+`clearInterval()` : 설정된 Interval  함수를 종료
+
+```jsx
+const timer = setInterval(()=> {
+  console.log("Heropy!");
+}, 3000);
+
+const h1El = document.querySelector('h1')
+h1El.addEventListener('click',()=>{
+  clearInterval(timer)
+})
+```
